@@ -1,0 +1,179 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: lightgray;
+    height: 100vh;
+}
+
+/* GRID CONSTRUCCIÓN */
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        /* Solo dejo el asidebar + grilla de productos como parte de la grilla principal */
+        "asidebar grid-productos";
+    gap: 40px;
+    align-items: flex-start;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto 1fr auto;
+    margin: 1rem auto;
+    /* Se da un ancho para que el tamaño del contenedor se ajuste a el, lo que visualmente la grilla se ve al centro de la pantalla */
+    width: 85%;
+}
+
+header {
+    background-color: #3d2b66;
+    text-align: center;
+    padding: 5px;
+}
+
+header img {
+    width: 40px;
+}
+
+header h1 {
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-top: 0px;
+}
+
+nav {
+    grid-area: asidebar;
+}
+
+main {
+    grid-area: grid-productos;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px 20px;
+    width: 90%;
+}
+
+footer {
+    background-color: #4f3887;
+    text-align: center;
+    padding: 5px;
+}
+
+footer p {
+    font-size: 10px;
+    color: #FFFFFF;
+}
+
+/* ########## CATEGORÍAS PROPIEDADES asidebar ########## */
+
+.catg-container {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    padding: 5px 20px 20px 20px;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    width:92%;
+    /* La propiedad position con sticky para que quede pegado el asidebar en el desplazamiento,
+    se activa en conjunto con la propiedad top */
+    position: sticky;
+    top:10px;
+}
+
+.grid-container h2,i{
+    font-size: 1.1rem;
+    color:#FFF;
+    border: none;
+    border-radius: 5px 80px 10px 60px;
+    border-color: #3d2b66;
+    background-color:#4f3887;
+    padding: 5px 5px 5px 10px;
+    min-width:max-content;
+}
+
+.catg-text {
+    display: flex;
+    align-items: center;
+    white-space: pre;
+    max-width: 300px;
+    flex-wrap: wrap;
+    line-height: 2%;
+    padding-left: 15px;
+}
+
+.catg-text h4 {
+    font-size: 14px;
+    color: darkslategray;
+}
+
+.catg-text p {
+    font-size: 12px;
+    color: #a9a9a9;
+    font-weight: 100;
+}
+
+/* .grid-productos{
+
+} */
+
+
+/* ########## CARDS PROPIEDADES ########## */
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    /* Este lo dejé opcional, al habilitarlo disminuye el tamaño de la card (simulando un mobile)width: 300px; */
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    padding-top: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Card Box - Propiedades elementos */
+.card-img img {
+    width: 60%;
+    transition: transform .2s;
+}
+
+.card-img img:hover {
+    width: 60%;
+    transform: scale(1.02);
+}
+
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Botón Propiedades y estados */
+.card button {
+    padding: 10px 60px;
+    color: #FFFFFF;
+    font-size: 1rem;
+    background-color: #3d2b66;
+    border: none;
+    border-radius: 0 0 5px 5px;
+    width: 100%;
+}
+
+.card button:hover {
+    background-color: #4f3887;
+    border: none;
+}
+
+.card button:focus {
+    background-color: #BEC1BB;
+    border: none;
+}
+
+/* Fin Botones */
+
+/* ########## FIN CARDS PROPIEDADES ########## */
